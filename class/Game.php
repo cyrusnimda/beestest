@@ -32,6 +32,9 @@ Class Game
 	private function loadHiveFromSession()
 	{
 		$this->hive = $_SESSION["hive"];
+		if( sizeof($this->hive) == 0 ){
+			header('Location: loose.php');
+		}
 	}
 
 	private function hitTheHive()
@@ -41,12 +44,13 @@ Class Game
 		$randomBee = $this->hive[$random];
 		$randomBee->hit();
 		if( $randomBee->isDead() ){
+			if( $randomBee->getName()=="Queen" ){
+				header('Location: loose.php');
+			}
 			unset($this->hive[$random]);
 		}
 		$this->hive = array_values($this->hive);
-		if(sizeof($this->hive)){
-
-		}
+		
 		$_SESSION["hive"] = $this->hive;
 	}
 
