@@ -1,8 +1,13 @@
 <?php
-	
+
+/**
+ * @author  Josu Ruiz
+ * @version 1.0 (14/05/2016)
+ */
 Class Hive
 {
 	private $bees = [];
+	//TODO use a config file for this.
 	private $beesTypes = ["QueenBee" => 1, "WorkerBee" => 5, "DroneBee" =>8];
 
 	public function getBees()
@@ -15,6 +20,10 @@ Class Hive
 		return sizeof( $this->bees );
 	}
 
+	/**
+	 * Populate the bees array
+	 * @return True
+	 */
 	public function createBees()
 	{
 		$this->bees = [];	
@@ -24,8 +33,13 @@ Class Hive
 				$this->bees[] = $bee;
 			}
 		}
+		return true;
 	}
 
+	/**
+	 * Hit a random bee in the hive
+	 * @return Bee   The hited bee
+	 */
 	public function hit()
 	{
 		$total = sizeof( $this->bees );
@@ -35,6 +49,11 @@ Class Hive
 		return $randomBee;
 	}
 
+	/**
+	 * Remove a bee from the hive
+	 * @param  Bee              The bee to remove  
+	 * @return True
+	 */
 	public function removeBee( $randomBee )
 	{
 		if( ($key = array_search($randomBee, $this->bees )) !== FALSE) {
@@ -42,6 +61,7 @@ Class Hive
 	    }
 
 		$this->bees = array_values($this->bees);
+		return true;	
 	}
 }
 

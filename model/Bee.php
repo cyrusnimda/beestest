@@ -1,5 +1,10 @@
 <?php
 	
+/**
+ * Basic Bee class
+ * @author  Josu Ruiz
+ * @version 1.0 (14/05/2016)
+ */
 Class Bee
 {
 	protected $name;
@@ -23,6 +28,10 @@ Class Bee
     	return $this;
     }
 
+    /**
+     * Check if the bee is dead
+     * @return boolean 
+     */
     public function isDead()
     {
     	return $this->life < 1;
