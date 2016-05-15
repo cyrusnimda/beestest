@@ -1,1 +1,1 @@
-<div>all bees are dead ... You Loose.<a href='/bees/controller/game.php?action=start'><button>Start again</button></a></div>
+<div>all bees are dead ... You Loose.<a href='index.php?action=start'><button>Start again</button></a></div>

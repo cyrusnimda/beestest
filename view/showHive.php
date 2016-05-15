@@ -1,4 +1,4 @@
-<h3>The hive has <?=$hive->getTotalBees()?> bees. <a href="/bees/controller/game.php?action=hit"><button>Hit it</button></a> </h3> 
+<h3>The hive has <?=$hive->getTotalBees()?> bees. <a href="index.php?action=hit"><button>Hit it</button></a> </h3> 
 
 <div>============================</div>
 

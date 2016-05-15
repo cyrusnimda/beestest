@@ -1,12 +1,5 @@
 <?php
 
-//TODO: use some auto initializer. 
-require_once("../model/Hive.php");
-require_once("../model/Bee.php");
-require_once("../model/QueenBee.php");
-require_once("../model/WorkerBee.php");
-require_once("../model/DroneBee.php");
-
 /**
  * Game controller, used to handle the hive, the session, etc.
  * 
@@ -73,14 +66,14 @@ Class GameController
 
 	public function showLoose()
 	{
-		require_once("../view/loose.php");
+		require_once("view/loose.php");
 		die();
 	}
 
 	public function showHive()
 	{
 		$hive = $this->hive;
-		require_once("../view/showHive.php");
+		require_once("view/showHive.php");
 	}
 
 
