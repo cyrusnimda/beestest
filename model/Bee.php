@@ -3,7 +3,7 @@
 /**
  * Basic Bee class
  * @author  Josu Ruiz
- * @version 1.0 (14/05/2016)
+ * @version 1.0 (15/05/2016)
  */
 Class Bee
 {
@@ -22,6 +22,10 @@ Class Bee
     	return $this->life;
     }
 
+    /**
+     * Change bees' life when hitted
+     * @return Bee 
+     */
     public function hit()
     {
     	$this->life -=  $this->pointPerHit;

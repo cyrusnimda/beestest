@@ -1,11 +1,18 @@
 <?php
 
-require_once("Hive.php");
-require_once("Bee.php");
-require_once("QueenBee.php");
-require_once("WorkerBee.php");
-require_once("DroneBee.php");
-	
+//TODO: use some auto initializer. 
+require_once("../model/Hive.php");
+require_once("../model/Bee.php");
+require_once("../model/QueenBee.php");
+require_once("../model/WorkerBee.php");
+require_once("../model/DroneBee.php");
+
+/**
+ * Game controller, used to handle the hive, the session, etc.
+ * 
+ * @author  Josu Ruiz
+ * @version 1.0 (15/05/2016)
+ */	
 Class GameController
 {
 	private $hive;
@@ -15,6 +22,14 @@ Class GameController
 		$this->initHive();
 	}
 
+	public function getHive()
+	{
+		return $this->hive;
+	}
+
+	/**
+	 * Get the hive from session or crete a new one if needed.
+	 */
 	private function initHive()
 	{
 		if( $this->gameInProgress() ){
@@ -24,6 +39,11 @@ Class GameController
 		}
 	}
 
+	/**
+	 * ***************   ACTION    ***************
+	 * Creates the bees and show the initial state.
+	 * 
+	 */
 	public function start()
 	{
 		$this->hive->createBees();
@@ -32,6 +52,11 @@ Class GameController
 		$this->showHive();
 	}
 
+	/**
+	 * ***************   ACTION    ***************
+	 * Hit the hive will hit a bee inside at random,
+	 * after that will check if the queen is dead.
+	 */
 	public function hit()
 	{
 		$randomBee = $this->hive->hit();
@@ -58,13 +83,16 @@ Class GameController
 		require_once("../view/showHive.php");
 	}
 
-	public function getHive()
-	{
-		return $this->hive;
-	}
 
+	/**
+	 * Check if the game is still in progress
+	 * @return Bool
+	 */
 	private function gameInProgress()
 	{
+		if( !isset($_SESSION["status"]) ){
+			return false;
+		}
 		return $_SESSION["status"] == "progress";
 	}
 
@@ -73,11 +101,19 @@ Class GameController
 		$_SESSION["hive"] = $this->hive;
 	}
 
+	/**
+	 * Check if there are no bees alive
+	 * @return Bool
+	 */
 	private function gameIsLost()
 	{
 		return $this->hive->getTotalBees() == 0;
 	}
 
+	/**
+	 * Get the hive data from session.
+	 * If the game is lost, show that view.
+	 */
 	private function loadHiveFromSession()
 	{
 		$this->hive = $_SESSION["hive"];
