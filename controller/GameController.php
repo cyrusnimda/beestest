@@ -34,6 +34,16 @@ Class GameController
 
 	/**
 	 * ***************   ACTION    ***************
+	 * Show index page.
+	 * 
+	 */
+	public function showIndex()
+	{
+		require_once("view/index.php");
+	}
+
+	/**
+	 * ***************   ACTION    ***************
 	 * Creates the bees and show the initial state.
 	 * 
 	 */

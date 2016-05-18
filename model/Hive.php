@@ -7,7 +7,9 @@
 Class Hive
 {
 	private $bees = [];
-	//TODO use a config file for this.
+	/**
+	 * @todo use a config file for this.
+	 */
 	private $beesTypes = ["QueenBee" => 1, "WorkerBee" => 5, "DroneBee" =>8];
 
 	public function getBees()

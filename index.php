@@ -1,6 +1,8 @@
 <?php
 
-	//TODO: use some auto initializer. 
+	/**
+	 * @todo use some auto initializer. 
+	 */
 	require_once("model/Hive.php");
 	require_once("model/Bee.php");
 	require_once("model/QueenBee.php");
@@ -11,16 +13,23 @@
 	// Start session.
 	session_start();
 
+	// Get action.
 	if( !isset( $_GET["action"] ) ){
-		// Show index page.
-		require_once("view/index.php");
+		$action = "showIndex";
 	} else{
-		//TODO use a security to restrict actions.
 		$action = $_GET["action"];
-		
-		// Run selected action.
-		$game = new GameController();
-		$game->$action();
 	}
+
+	/**
+	 * @todo use better security to restrict actions.
+	 */
+	$allowed_actions = ["showIndex", "start", "hit"];
+	if ( !in_array($action, $allowed_actions) ){
+		die("Action not allowed.");
+	}
+
+	// Run selected action.
+	$game = new GameController();
+	$game->$action();
 
 ?>
