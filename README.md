@@ -12,7 +12,7 @@ Bees: There are three types of bees in this game:
 
 * Worker Bee. Worker Bees have a lifespan of 75 Hit Points. When a Worker Bee is hit, 10 Hit Points are deducted from his lifespan. There are 5 Worker Bees. 
 
-*Drone Bee/ Drone Bees have a lifespan of 50 Hit Points. When a Drone Bee is hit, 12 Hit Points are deducted from his lifespan. There are 8 Drone Bees. 
+* Drone Bee. Drone Bees have a lifespan of 50 Hit Points. When a Drone Bee is hit, 12 Hit Points are deducted from his lifespan. There are 8 Drone Bees. 
 
 Gameplay: To play, there must be a button that enables a user to HIT a random bee. The selection of a bee must be random. When the bees are all dead, the game must be able to reset itself with full life bees for another round. Constraints: 
 
