@@ -2,7 +2,7 @@ The Bee Game Objective:
 
 The objective of this exercise is to create a PHP application that performs the following tasks: 
 
-* A web page must be produced as the interface to play the game. Styling is not expected nor necessary. â€¢ A button must be present to kick off the process of hitting a random bee. 
+* A web page must be produced as the interface to play the game. Styling is not expected nor necessary. A button must be present to kick off the process of hitting a random bee. 
 * All code must be submitted to work in a local environment. Hosted solutions will be rejected. 
 * The game must adhere to the following rules and constraints.
 
